@@ -31,12 +31,14 @@ stage('Maven Package'){
 			}
 		} 
 		
+		
+}
+
 post {
        always {
            cucumber '**/cucumber.json'
        }
-   }		
-
-  }
+   }
+  
 
 }
