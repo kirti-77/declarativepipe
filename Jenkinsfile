@@ -50,6 +50,6 @@ post {
            cucumber '**/cucumber.json'
        }
    }
-  
+  }
 
 }
