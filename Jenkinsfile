@@ -15,6 +15,12 @@ stage('Unit Test') {
        
        }
    }
+   
+   stage('Jacoco'){
+     steps{
+      jacoco()
+     }
+   }
  
 stage('Maven Package'){
 
