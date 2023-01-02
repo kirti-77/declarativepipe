@@ -32,7 +32,7 @@ stage('SonarQube'){
 
 				-Dsonar.login=squ_c4f54ffaef4d2c21303ebd66796d5139526dd8a4'''
 
-}
+                }
 
    } 
  
@@ -44,9 +44,6 @@ stage('Maven Package'){
 			bat label: 'Project packaging', script: '''mvn package'''
 			}
 		} 
-		
-		
-}
 
 post {
        always {
