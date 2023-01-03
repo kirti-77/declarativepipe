@@ -145,42 +145,32 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
-	
-	
-
 	<build>
 		<pluginManagement>
 			<!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-			<plugins>
-			
-			
-			 <plugin>
-            <groupId>net.masterthought</groupId>
-            <artifactId>maven-cucumber-reporting</artifactId>
-            <version>${maven-cucumber-reporting.version}</version>
-            <executions>
-                <execution>
-                    <id>generate-cucumber-reports</id>
-                    <phase>test</phase>
-                    <goals>
-                        <goal>generate</goal>
-                    </goals>
-                    <configuration>
-                        <jsonFiles>
-                            <param>**/*.json</param>
-                        </jsonFiles>
-                        <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
-                        <inputDirectory>${project.build.directory}/cucumber</inputDirectory>
-                        <checkBuildResult>false</checkBuildResult>
-                    </configuration>
-                </execution>
-            </executions>
-        </plugin>
-			
-			
-
-
+			<plugins>		
+			<plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>maven-cucumber-reporting</artifactId>
+                <version>3.8.0</version>
+                <executions>
+                    <execution>
+                        <id>execution</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <projectName>cucumber-report-app</projectName>  <!-- Replace with project name -->
+                            <outputDirectory>target/cucumber-reports/advanced-reports</outputDirectory>
+                            <cucumberOutput>target/cucumber-reports/CucumberTestReport.json</cucumberOutput>
+                            <buildNumber>1</buildNumber>
+                            <parallelTesting>false</parallelTesting>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            
 				<plugin>
 					<artifactId>maven-jar-plugin</artifactId>
 					<version>3.2.0</version>
@@ -188,7 +178,7 @@
 						<archive>
 							<manifest>
 								<mainClass>com.sapient.app.App</mainClass>
-							</manifest>
+						</manifest>
 						</archive>
 					</configuration>
 				</plugin>
